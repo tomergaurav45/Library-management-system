@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	#fetch data from database
+<<<<<<< HEAD
 	$connection = mysqli_connect("localhost:3307", "root", "gaurav01", "lms");
 	$db = mysqli_select_db($connection,"lms");
 	$name = "";
@@ -8,6 +9,14 @@
 	$author = "";
 	$book_no = "";
 	$query = "select issued_books.book_name,issued_books.book_author,issued_books.book_no,users.name from issued_books left join users on issued_books.student_id = users.id where issued_books.status = 1";
+=======
+	$connection = mysqli_connect("localhost","root","");
+	$db = mysqli_select_db($connection,"lms");
+	$book_name = "";
+	$author = "";
+	$book_no = "";
+	$query = "select book_name,book_author,book_no from issued_books where student_id = $_SESSION[id] and status = 1";
+>>>>>>> 68cf8489eed4316808cf66e6239b6523d99d7be5
 ?>
 <!DOCTYPE html>
 <html>
